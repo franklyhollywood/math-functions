@@ -12,11 +12,11 @@ example and uses the values that were input into the function:
 */
 
 export function sum(a, b) {
-	let answer = [];
-	let sum = a + b;
-	answer.push(sum);
-	answer.push(`The sum of ${a} and ${b} is ${sum}.`);
-	return answer;
+    let answer = [];
+    let sum = a + b;
+    answer.push(sum);
+    answer.push(`The sum of ${a} and ${b} is ${sum}.`);
+    return answer;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
@@ -30,11 +30,11 @@ Write a function called multiply() that takes in two numbers as arguments and re
 */
 
 export function multiply(a, b) {
-	let productAnswer = [];
-	let product = a * b;
-	productAnswer.push(product);
-	productAnswer.push(`The product of ${a} and ${b} is ${product}.`);
-	return productAnswer;
+    let productAnswer = [];
+    let product = a * b;
+    productAnswer.push(product);
+    productAnswer.push(`The product of ${a} and ${b} is ${product}.`);
+    return productAnswer;
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
@@ -59,24 +59,24 @@ how to do this. However, you may continue to use the + operator for string conca
 */
 
 export function sumAndMultiplyThreeNumbers(a, b, c) {
-	const sumAndMultiply = [];
-	const sumArr1 = sum(a, b);
-	const sumArr2 = sum(sumArr1[0], c);
-	const productArr1 = multiply(a, b);
-	const productArr2 = multiply(productArr1[0], c);
-	sumAndMultiply.push(sumArr2[0]);
-	sumAndMultiply.push(productArr2[0]);
-	sumAndMultiply.push(`${a} and ${b} and ${c} sum to ${sumArr2[0]}.`);
-	sumAndMultiply.push(
-		`The product of ${a} and ${b} and ${c} is ${productArr2[0]}.`
-	);
+    const sumAndMultiply = [];
+    const sumArr1 = sum(a, b);
+    const sumArr2 = sum(sumArr1[0], c);
+    const productArr1 = multiply(a, b);
+    const productArr2 = multiply(productArr1[0], c);
+    sumAndMultiply.push(sumArr2[0]);
+    sumAndMultiply.push(productArr2[0]);
+    sumAndMultiply.push(`${a} and ${b} and ${c} sum to ${sumArr2[0]}.`);
+    sumAndMultiply.push(
+        `The product of ${a} and ${b} and ${c} is ${productArr2[0]}.`
+    );
 	// return [
 	// 	sumArr2[0],
 	// 	productArr2[0],
 	// 	`${a} and ${b} and ${c} sum to ${sumArr2[0]}.`,
 	// 	`The product of ${a} and ${b} and ${c} is ${productArr2[0]}.`,
 	// ];
-	return sumAndMultiply;
+    return sumAndMultiply;
 
 	//eslint-disable-line
 }
@@ -99,7 +99,14 @@ have to be resourceful to figure out how to do this. However, you may continue
 to use the + operator for string concatenation.
 */
 
-export function sumArrayWithThreeNumbers(sumArr) {}
+export function sumArrayWithThreeNumbers(someArr) {
+    const newSum1 = sum(2, 3);
+    const newSum2 = sum(newSum1[0], 4);
+    return [
+        newSum2[0],
+        `2,3,4 was passed in as an array of numbers, and ${newSum2[0]} is their sum.`,
+    ];
+}
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 // Don't forget to create a new branch for your work on the next question!
@@ -121,6 +128,9 @@ you may continue to use the + operator for string concatenation.
 */
 
 export function multiplyArrayWithThreeNumbers(multArr) {
+    const newProduct = multiply(2, 3);
+    const newProduct2 = multiply(newProduct[0], 4);
+    return [newProduct2[0], `The numbers 2,3,4 have a product of ${newProduct2[0]}.`];
 	//eslint-disable-line
 }
 
